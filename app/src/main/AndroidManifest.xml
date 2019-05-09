@@ -1,11 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-          package="com.umeng.soexample">
+    package="com.umeng.soexample">
+
+
+    <!--友盟 start-->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.BROADCAST_PACKAGE_ADDED" />
+    <uses-permission android:name="android.permission.BROADCAST_PACKAGE_CHANGED" />
+    <uses-permission android:name="android.permission.BROADCAST_PACKAGE_INSTALL" />
+    <uses-permission android:name="android.permission.BROADCAST_PACKAGE_REPLACED" />
+    <uses-permission android:name="android.permission.RESTART_PACKAGES" />
+    <uses-permission android:name="android.permission.GET_TASKS" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <!--友盟 end-->
 
     <application
+        android:name=".App"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
-        android:name=".App"
         android:supportsRtl="true">
 
         <!--demo启动页-->
@@ -28,47 +47,51 @@
             android:name="com.umeng.soexample.analytics.UFragmentTabs"
             android:theme="@android:style/Theme.Wallpaper.NoTitleBar" />
 
-        <activity android:name=".HomeActivity"
-                  android:theme="@android:style/Theme.Black.NoTitleBar">
-        </activity>
-        <activity android:name=".log.LogActivity"
-                  android:theme="@android:style/Theme.Black.NoTitleBar">
-        </activity>
-        <activity android:name=".analytics.UappActivity"
-                  android:theme="@android:style/Theme.Black.NoTitleBar">
-        </activity>
+        <activity
+            android:name=".HomeActivity"
+            android:theme="@android:style/Theme.Black.NoTitleBar" />
+        <activity
+            android:name=".log.LogActivity"
+            android:theme="@android:style/Theme.Black.NoTitleBar" />
+        <activity
+            android:name=".analytics.UappActivity"
+            android:theme="@android:style/Theme.Black.NoTitleBar" />
 
 
-        <activity android:name=".push.UpushActivity"
-                  android:theme="@android:style/Theme.Black.NoTitleBar">
-        </activity>
-        <activity android:name=".share.UshareActivity"
-                  android:theme="@android:style/Theme.Black.NoTitleBar">
-        </activity>
-        <activity android:name=".share.SharePlatformActivity"
-                  android:theme="@android:style/Theme.Black.NoTitleBar">
-        </activity>
-        <activity android:name=".share.ShareDetailActivity"
-                  android:theme="@android:style/Theme.Black.NoTitleBar">
-        </activity>
-        <activity android:name=".share.ShareBoardActivity"
-                  android:theme="@android:style/Theme.Black.NoTitleBar">
-        </activity>
-        <activity android:name=".share.AuthActivity"
-                  android:theme="@android:style/Theme.Black.NoTitleBar">
-        </activity>
-        <activity android:name=".share.InfoActivity"
-                  android:theme="@android:style/Theme.Black.NoTitleBar">
-        </activity>
-        <activity android:name=".share.InfoDetailActivity"
-                  android:theme="@android:style/Theme.Black.NoTitleBar">
-        </activity>
-        <activity android:name=".share.SettingActivity"
-                  android:theme="@style/myTransparent">
-        </activity>
-        <activity android:name=".analytics.Process1Activity"
-            android:process=":process_activity_1"/>
-        <service android:name=".analytics.Process1Service" android:process=":process_service_1"/>
+        <activity
+            android:name=".push.UpushActivity"
+            android:theme="@android:style/Theme.Black.NoTitleBar" />
+        <activity
+            android:name=".share.UshareActivity"
+            android:theme="@android:style/Theme.Black.NoTitleBar" />
+        <activity
+            android:name=".share.SharePlatformActivity"
+            android:theme="@android:style/Theme.Black.NoTitleBar" />
+        <activity
+            android:name=".share.ShareDetailActivity"
+            android:theme="@android:style/Theme.Black.NoTitleBar" />
+        <activity
+            android:name=".share.ShareBoardActivity"
+            android:theme="@android:style/Theme.Black.NoTitleBar" />
+        <activity
+            android:name=".share.AuthActivity"
+            android:theme="@android:style/Theme.Black.NoTitleBar" />
+        <activity
+            android:name=".share.InfoActivity"
+            android:theme="@android:style/Theme.Black.NoTitleBar" />
+        <activity
+            android:name=".share.InfoDetailActivity"
+            android:theme="@android:style/Theme.Black.NoTitleBar" />
+        <activity
+            android:name=".share.SettingActivity"
+            android:theme="@style/myTransparent" />
+        <activity
+            android:name=".analytics.Process1Activity"
+            android:process=":process_activity_1" />
+
+        <service
+            android:name=".analytics.Process1Service"
+            android:process=":process_service_1" />
         <!--demo界面  end-->
         <!--share  start-->
         <activity
@@ -79,9 +102,8 @@
             android:theme="@android:style/Theme.Translucent.NoTitleBar" />
         <activity
             android:name="com.umeng.socialize.editorpage.ShareActivity"
-            android:theme="@android:style/Theme.NoTitleBar"
             android:excludeFromRecents="true"
-            />
+            android:theme="@android:style/Theme.NoTitleBar" />
         <!-- wechat callback-->
 
         <activity
@@ -108,21 +130,19 @@
         <activity
             android:name="com.umeng.socialize.media.WBShareCallBackActivity"
             android:configChanges="keyboardHidden|orientation"
-            android:theme="@android:style/Theme.Translucent.NoTitleBar"
             android:exported="false"
-            android:screenOrientation="portrait" >
-        </activity>
-        <activity android:name="com.sina.weibo.sdk.web.WeiboSdkWebActivity"
-                  android:configChanges="keyboardHidden|orientation"
-                  android:exported="false"
-                  android:windowSoftInputMode="adjustResize"
-            >
-        </activity>
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+        <activity
+            android:name="com.sina.weibo.sdk.web.WeiboSdkWebActivity"
+            android:configChanges="keyboardHidden|orientation"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
 
         <activity
-            android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen"
+            android:name="com.sina.weibo.sdk.share.WbShareTransActivity"
             android:launchMode="singleTask"
-            android:name="com.sina.weibo.sdk.share.WbShareTransActivity">
+            android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen">
             <intent-filter>
                 <action android:name="com.sina.weibo.sdk.action.ACTION_SDK_REQ_ACTIVITY" />
                 <category android:name="android.intent.category.DEFAULT" />
@@ -133,11 +153,11 @@
         <activity
             android:name="com.vk.sdk.VKServiceActivity"
             android:label="ServiceActivity"
-            android:theme="@style/VK.Transparent"/>
+            android:theme="@style/VK.Transparent" />
         <activity
             android:name="com.tencent.tauth.AuthActivity"
             android:launchMode="singleTask"
-            android:noHistory="true" >
+            android:noHistory="true">
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
 
@@ -149,9 +169,10 @@
         </activity>
         <activity
             android:name="com.tencent.connect.common.AssistActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
             android:screenOrientation="portrait"
-            android:theme="@android:style/Theme.Translucent.NoTitleBar"
-            android:configChanges="orientation|keyboardHidden|screenSize"/>
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+
         <uses-library
             android:name="com.google.android.maps"
             android:required="false" />
@@ -170,29 +191,29 @@
 
         <meta-data
             android:name="com.facebook.sdk.ApplicationId"
-            android:value="@string/facebook_app_id"
-            />
+            android:value="@string/facebook_app_id" />
 
         <!--twitter分享回调结果 -->
         <receiver
             android:name=".twitterapi.TwitterShareReceiver"
             android:exported="false">
             <intent-filter>
-                <action android:name="com.twitter.sdk.android.tweetcomposer.UPLOAD_SUCCESS"/>
-                <action android:name="com.twitter.sdk.android.tweetcomposer.UPLOAD_FAILURE"/>
-                <action android:name="com.twitter.sdk.android.tweetcomposer.TWEET_COMPOSE_CANCEL"/>
+                <action android:name="com.twitter.sdk.android.tweetcomposer.UPLOAD_SUCCESS" />
+                <action android:name="com.twitter.sdk.android.tweetcomposer.UPLOAD_FAILURE" />
+                <action android:name="com.twitter.sdk.android.tweetcomposer.TWEET_COMPOSE_CANCEL" />
             </intent-filter>
         </receiver>
 
         <activity
             android:name="com.dropbox.client2.android.AuthActivity"
-            android:launchMode="singleTask"
-            android:configChanges="orientation|keyboard">
+            android:configChanges="orientation|keyboard"
+            android:launchMode="singleTask">
             <intent-filter>
                 <!-- Change this to be db- followed by your app key -->
                 <data android:scheme="db-oz8v5apet3arcdy" />
                 <action android:name="android.intent.action.VIEW" />
-                <category android:name="android.intent.category.BROWSABLE"/>
+
+                <category android:name="android.intent.category.BROWSABLE" />
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
@@ -201,12 +222,150 @@
         <!-- 使用完全自定义消息来开启应用的服务进程的示例服务配置 -->
         <service android:name=".push.MyNotificationService" />
         <service android:name=".push.UmengNotificationService" />
+
         <receiver android:name=".push.NotificationBroadcast" />
         <activity
             android:name=".push.MipushTestActivity"
-            android:launchMode="singleTask"
-            android:exported="true"/>
+            android:exported="true"
+            android:launchMode="singleTask" />
 
+        <!--友盟 start-->
+        <service
+            android:name="com.taobao.accs.ChannelService"
+            android:exported="true"
+            android:process=":channel">
+            <intent-filter>
+                <action android:name="com.taobao.accs.intent.action.SERVICE" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.taobao.accs.intent.action.ELECTION" />
+            </intent-filter>
+        </service>
+
+        <service
+            android:name="com.taobao.accs.data.MsgDistributeService"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="com.taobao.accs.intent.action.RECEIVE" />
+            </intent-filter>
+        </service>
+
+        <receiver
+            android:name="com.taobao.accs.EventReceiver"
+            android:process=":channel">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.PACKAGE_REMOVED" />
+                <data android:scheme="package" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.USER_PRESENT" />
+            </intent-filter>
+        </receiver>
+
+        <receiver
+            android:name="com.taobao.accs.ServiceReceiver"
+            android:process=":channel">
+            <intent-filter>
+                <action android:name="com.taobao.accs.intent.action.COMMAND" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.taobao.accs.intent.action.START_FROM_AGOO" />
+            </intent-filter>
+        </receiver>
+
+        <service
+            android:name="com.taobao.accs.ChannelService$KernelService"
+            android:process=":channel" />
+
+        <service
+            android:name="org.android.agoo.accs.AgooService"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="com.taobao.accs.intent.action.RECEIVE" />
+            </intent-filter>
+        </service>
+
+        <service
+            android:name="com.umeng.message.UmengIntentService"
+            android:exported="true"
+            android:process=":channel">
+            <intent-filter>
+                <action android:name="org.agoo.android.intent.action.RECEIVE" />
+            </intent-filter>
+        </service>
+
+        <service
+            android:name="com.umeng.message.XiaomiIntentService"
+            android:exported="true"
+            android:process=":channel">
+            <intent-filter>
+                <action android:name="org.agoo.android.intent.action.RECEIVE" />
+            </intent-filter>
+        </service>
+
+        <receiver
+            android:name="com.taobao.agoo.AgooCommondReceiver"
+            android:exported="true"
+            android:process=":channel">
+            <intent-filter>
+                <action android:name="cn.zontek.smartcommunity.intent.action.COMMAND" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.PACKAGE_REMOVED" />
+                <data android:scheme="package" />
+            </intent-filter>
+        </receiver>
+
+        <service
+            android:name="com.umeng.message.UmengMessageIntentReceiverService"
+            android:exported="true"
+            android:process=":channel">
+            <intent-filter>
+                <action android:name="org.android.agoo.client.MessageReceiverService" />
+            </intent-filter>
+        </service>
+
+        <receiver
+            android:name="com.umeng.message.NotificationProxyBroadcastReceiver"
+            android:exported="false" />
+
+        <service
+            android:name="com.umeng.message.UmengMessageCallbackHandlerService"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.umeng.messge.registercallback.action" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.umeng.message.enablecallback.action" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.umeng.message.disablecallback.action" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.umeng.message.message.handler.action" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.umeng.message.message.sendmessage.action" />
+            </intent-filter>
+        </service>
+
+        <service
+            android:name="com.umeng.message.UmengDownloadResourceService"
+            android:exported="false" />
+
+        <provider
+            android:name="com.umeng.message.provider.MessageProvider"
+            android:authorities="cn.zontek.smartcommunity.umeng.message"
+            android:exported="false">
+            <grant-uri-permission android:pathPattern=".*" />
+        </provider>
+        <!--友盟 end-->
     </application>
 
 </manifest>

@@ -385,7 +385,7 @@ public class UpushActivity extends BaseActivity implements View.OnClickListener 
     private void showCardMessage() {
         InAppMessageManager.getInstance(this).showCardMessage(this, "main", new IUmengInAppMsgCloseCallback() {
             @Override
-            public void onColse() {
+            public void onClose() {
                 Log.i(TAG, "card message close");
             }
         });

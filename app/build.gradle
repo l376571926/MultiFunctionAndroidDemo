@@ -1,15 +1,13 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 26
-    buildToolsVersion '26.0.3'
+    compileSdkVersion 28
     defaultConfig {
-        applicationId "com.umeng.soexample"
+        applicationId "cn.zontek.smartcommunity"
         minSdkVersion 18
-        targetSdkVersion 22
+        targetSdkVersion 28
         versionCode 1
         versionName "1.0"
-        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
         release {
@@ -27,16 +25,75 @@ android {
             keyPassword "android"
         }
     }
-
+    compileOptions {
+        sourceCompatibility 1.8
+        targetCompatibility 1.8
+    }
 }
 
 dependencies {
-//    compile fileTree(include: ['*.jar'], dir: 'libs')
-//    compile project(':umlib')
-//    compile project(':push')
-    //compile files('libs/umeng-analytics-7.4.1.jar')
-    //compile files('libs/umeng-common-1.4.2.jar')
-    compile project(':UMLibrary')
-    compile 'com.twitter.sdk.android:twitter-core:3.1.1'
-    compile 'com.twitter.sdk.android:tweet-composer:3.1.1'
+
+    //    implementation fileTree(include: ['*.jar'], dir: 'libs')
+
+    //    implementation project(':umlib')
+
+    //    implementation project(':push')
+
+    //implementation files('libs/umeng-analytics-7.4.1.jar')
+
+    //implementation files('libs/umeng-common-1.4.2.jar')
+    implementation 'com.twitter.sdk.android:twitter-core:3.3.0'
+    implementation 'com.twitter.sdk.android:tweet-composer:3.3.0'
+    implementation 'com.umeng.umsdk:analytics:8.0.2'
+
+    //PushSDK必须依赖基础组件库，所以需要加入对应依赖
+    implementation 'com.umeng.umsdk:common:2.0.2'
+    //PushSDK必须依赖utdid库，所以需要加入对应依赖
+    implementation 'com.umeng.umsdk:utdid:1.1.5.3'
+    //PushSDK
+    implementation 'com.umeng.umsdk:push:5.0.2'
+
+    implementation files('libs/umeng-share-core-6.9.4.jar')
+    implementation files('libs/weiboSDKCore.jar')
+    implementation files('libs/umeng-share-facebook-6.9.4.jar')
+    implementation files('libs/umeng-share-vkontakte-6.9.4.jar')
+    implementation files('libs/umeng-share-dropbox-6.9.4.jar')
+    implementation files('libs/android-support-v4.jar')
+    implementation files('libs/wechat-sdk-android-without-mta-5.1.4.jar')
+    implementation files('libs/umeng-share-wechat-full-6.9.4.jar')
+    implementation files('libs/umeng-share-tencentWB-6.9.4.jar')
+    implementation files('libs/libapshare20161108.jar')
+    implementation files('libs/open_sdk_r5990_lite.jar')
+    implementation files('libs/libddshare.jar')
+    implementation files('libs/umeng-share-twitter-6.9.4.jar')
+    implementation files('libs/umeng-share-sina-full-6.9.4.jar')
+    implementation files('libs/umeng-share-alipay-6.9.4.jar')
+    implementation files('libs/umeng-share-Ding-6.9.4.jar')
+    implementation files('libs/umeng-share-yinxin-6.9.4.jar')
+    implementation files('libs/SocialSDK_yixin_1.jar')
+    implementation files('libs/umeng-share-flickr-6.9.4.jar')
+    implementation files('libs/umeng-share-foursquare-6.9.4.jar')
+    implementation files('libs/umeng-share-gplus-6.9.4.jar')
+    implementation files('libs/umeng-share-instagram-6.9.4.jar')
+    implementation files('libs/umeng-share-kakao-6.9.4.jar')
+    implementation files('libs/umeng-share-laiwang-6.9.4.jar')
+    implementation files('libs/umeng-share-line-6.9.4.jar')
+    implementation files('libs/umeng-share-linkedin-6.9.4.jar')
+    implementation files('libs/umeng-share-pinterest-6.9.4.jar')
+    implementation files('libs/umeng-share-pocket-6.9.4.jar')
+    implementation files('libs/umeng-share-QQ-full-6.9.4.jar')
+    implementation files('libs/umeng-share-renren-6.9.4.jar')
+    implementation files('libs/umeng-share-sms-6.9.4.jar')
+    implementation files('libs/umeng-share-tumblr-6.9.4.jar')
+    implementation files('libs/umeng-share-whatsapp-6.9.4.jar')
+    implementation files('libs/umeng-share-ynote-6.9.4.jar')
+    implementation files('libs/umeng-shareboard-widget-6.9.4.jar')
+    implementation files('libs/umeng-sharetool-6.9.4.jar')
+    implementation files('libs/volley.jar')
+    implementation files('libs/umeng-share-douban-6.9.4.jar')
+    implementation files('libs/umeng-share-email-6.9.4.jar')
+    implementation files('libs/umeng-share-evernote-6.9.4.jar')
+    implementation files('libs/SocialSDK_laiwang_1.jar')
+    implementation files('libs/json_simple-1.1.jar')
+    implementation files('libs/SecurityEnvSDK-release-1.1.0.jar')
 }
