@@ -3,11 +3,15 @@ apply plugin: 'com.android.application'
 android {
     compileSdkVersion 28
     defaultConfig {
-        applicationId "cn.zontek.smartcommunity"
+        applicationId PACKAGE_NAME
         minSdkVersion 18
         targetSdkVersion 28
         versionCode 1
         versionName "1.0"
+
+        buildConfigField 'String', 'UMENG_PUSH_APP_KEY', UMENG_PUSH_APP_KEY
+        buildConfigField 'String', 'UMENG_PUSH_UMENG_MESSAGE_SECRET', UMENG_PUSH_UMENG_MESSAGE_SECRET
+        buildConfigField 'String', 'UMENG_PUSH_APP_MASTER_SECRET', UMENG_PUSH_APP_MASTER_SECRET
     }
     buildTypes {
         release {
@@ -32,16 +36,7 @@ android {
 }
 
 dependencies {
-
-    //    implementation fileTree(include: ['*.jar'], dir: 'libs')
-
-    //    implementation project(':umlib')
-
-    //    implementation project(':push')
-
-    //implementation files('libs/umeng-analytics-7.4.1.jar')
-
-    //implementation files('libs/umeng-common-1.4.2.jar')
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
     implementation 'com.twitter.sdk.android:twitter-core:3.3.0'
     implementation 'com.twitter.sdk.android:tweet-composer:3.3.0'
     implementation 'com.umeng.umsdk:analytics:8.0.2'

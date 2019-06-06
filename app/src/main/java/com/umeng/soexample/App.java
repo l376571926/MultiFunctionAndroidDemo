@@ -46,9 +46,17 @@ public class App extends Application {
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
         }
-        //初始化组件化基础库, 统计SDK/推送SDK/分享SDK都必须调用此初始化接口
-        UMConfigure.init(this, "5cceb7b14ca357361c000532", "Umeng", UMConfigure.DEVICE_TYPE_PHONE,
-                "1943e7e9a8b80c1fca0e9d47d4f40050");
+
+        /**
+         * 初始化common库
+         * 参数1:上下文，不能为空
+         * 参数2:【友盟+】 AppKey
+         * 参数3:【友盟+】 Channel
+         * 参数4:设备类型，UMConfigure.DEVICE_TYPE_PHONE为手机、UMConfigure.DEVICE_TYPE_BOX为盒子，默认为手机
+         * 参数5:Push推送业务的secret
+         */
+        UMConfigure.init(this, BuildConfig.UMENG_PUSH_APP_KEY, "Umeng", UMConfigure.DEVICE_TYPE_PHONE, BuildConfig.UMENG_PUSH_UMENG_MESSAGE_SECRET);
+
         //PushSDK初始化(如使用推送SDK，必须调用此方法)
         initUpush();
 
@@ -119,9 +127,7 @@ public class App extends Application {
              */
             @Override
             public void dealWithCustomMessage(final Context context, final UMessage msg) {
-
                 handler.post(new Runnable() {
-
                     @Override
                     public void run() {
                         // TODO Auto-generated method stub
@@ -199,7 +205,7 @@ public class App extends Application {
         mPushAgent.register(new IUmengRegisterCallback() {
             @Override
             public void onSuccess(String deviceToken) {
-                Log.i(TAG, "device token: " + deviceToken);
+                Log.e(TAG, "获取到友盟推送device token: " + deviceToken);
                 sendBroadcast(new Intent(UPDATE_STATUS_ACTION));
             }
 
